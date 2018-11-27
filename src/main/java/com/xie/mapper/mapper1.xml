@@ -3,6 +3,6 @@
 <mapper namespace="mymapper1">
 	<select id="selectrightlogin" parameterType="java.lang.String"
 		resultType="com.xie.beans.ParamBeans">
-		select * from loginParam
+		select * from loginParam where is_use=1
 	</select>
 </mapper>
