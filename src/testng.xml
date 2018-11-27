@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="LoginTest suite" verbose="1">
+	<test name="LoginTest">
+		<classes>
+			<class name="com.xie.testcase.test">
+				<methods>
+					<include name="rightLogin" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="1705" started-at="2018-11-23T02:00:35Z" finished-at="2018-11-23T02:00:37Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="1705" started-at="2018-11-23T02:00:35Z" finished-at="2018-11-23T02:00:37Z">
+      <class name="com.xie.testcase.test">
+        <test-method status="PASS" signature="rightLogin()[pri:0, instance:com.xie.testcase.test@724af044]" name="rightLogin" duration-ms="1687" started-at="2018-11-23T02:00:36Z" finished-at="2018-11-23T02:00:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- rightLogin -->
+      </class> <!-- com.xie.testcase.test -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
