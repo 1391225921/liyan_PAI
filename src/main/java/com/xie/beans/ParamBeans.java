@@ -1,8 +1,5 @@
 package com.xie.beans;
 
-import com.jayway.jsonpath.JsonPath;
-import com.xie.util.HttpUtil;
-
 public class ParamBeans {
 	private String id;
 	private String url;
@@ -70,18 +67,6 @@ public class ParamBeans {
 
 	public String toString() {
 		return "id=" + id + ",url=" + url + ",params=" + params;
-	}
-
-	public String getToken() {
-		HttpUtil httpUtil = new HttpUtil();
-		String entity = "username=谢家玲&password=123456";
-		// 执行post，获取返回值
-		String result = httpUtil.post(
-				"http://qysys.liyantech.cn/app/webLogin.action", entity);
-		System.out.println("result-----" + result);
-		String token = JsonPath.read(result, "$.result.token");
-		System.out.println(token);
-		return token;
 	}
 
 }

@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1705" started-at="2018-11-23T02:00:35Z" finished-at="2018-11-23T02:00:37Z">
+  <suite name="Default suite" duration-ms="1522" started-at="2018-11-28T02:25:54Z" finished-at="2018-11-28T02:25:56Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1705" started-at="2018-11-23T02:00:35Z" finished-at="2018-11-23T02:00:37Z">
+    <test name="Default test" duration-ms="1522" started-at="2018-11-28T02:25:54Z" finished-at="2018-11-28T02:25:56Z">
       <class name="com.xie.testcase.test">
-        <test-method status="PASS" signature="rightLogin()[pri:0, instance:com.xie.testcase.test@724af044]" name="rightLogin" duration-ms="1687" started-at="2018-11-23T02:00:36Z" finished-at="2018-11-23T02:00:37Z">
+        <test-method status="PASS" signature="rightLogin()[pri:0, instance:com.xie.testcase.test@724af044]" name="rightLogin" duration-ms="1502" started-at="2018-11-28T02:25:54Z" finished-at="2018-11-28T02:25:56Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- rightLogin -->

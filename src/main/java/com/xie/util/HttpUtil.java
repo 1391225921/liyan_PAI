@@ -42,7 +42,7 @@ public class HttpUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println(result);
+		System.out.println("接口返回的json为："+result);
 		return result;
 	}
 
