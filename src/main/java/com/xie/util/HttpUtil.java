@@ -13,6 +13,8 @@ import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.util.EntityUtils;
 
+import com.google.gson.JsonObject;
+
 public class HttpUtil {
 	// 不带token的post请求
 	public String post(String url, String params) {
@@ -42,11 +44,11 @@ public class HttpUtil {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		System.out.println("接口返回的json为："+result);
+		System.out.println("接口返回的json为：" + result);
 		return result;
 	}
 
-	// 带token的post请求
+	// 带token的post请求(token放在http头部)
 	public String post(String url, String token, List<NameValuePair> params) {
 		// 创建默认HttpClient
 		CloseableHttpClient httpClient = HttpClients.createDefault();
@@ -85,4 +87,84 @@ public class HttpUtil {
 		return result;
 
 	}
+
+	// 不带token的post请求,使用json
+	public String post(String url, JsonObject data) {
+		// 创建默认HttpClient
+		CloseableHttpClient httpClient = HttpClients.createDefault();
+		// post请求
+		HttpPost httpPost = new HttpPost(url);
+		String result = "";
+		try {
+			// 新建String类型entity
+			StringEntity entity = new StringEntity(data.toString(), "utf-8");
+			// entity的类型为json
+			entity.setContentType("application/json");
+			// 填充post实体
+			httpPost.setEntity(entity);
+			try {
+				// 获取response
+				CloseableHttpResponse response = httpClient.execute(httpPost);
+				try {
+					result = EntityUtils.toString(response.getEntity(),
+							Consts.UTF_8);
+				} catch (Exception e) {
+					e.printStackTrace();
+					response.close();
+				} finally {
+					response.close();
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+				httpClient.close();
+			} finally {
+				httpClient.close();
+			}
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return result;
+
+	}
+	// 带token的post请求,使用json
+		public String post(String url,String token, JsonObject data) {
+			// 创建默认HttpClient
+			CloseableHttpClient httpClient = HttpClients.createDefault();
+			// post请求
+			HttpPost httpPost = new HttpPost(url);
+			String result = "";
+			try {
+				httpPost.addHeader("access-token", token);
+				// 新建String类型entity
+				StringEntity entity = new StringEntity(data.toString(), "utf-8");
+				// entity的类型为json
+				entity.setContentType("application/json");
+				// 填充post实体
+				httpPost.setEntity(entity);
+				try {
+					// 获取response
+					CloseableHttpResponse response = httpClient.execute(httpPost);
+					try {
+						result = EntityUtils.toString(response.getEntity(),
+								Consts.UTF_8);
+					} catch (Exception e) {
+						e.printStackTrace();
+						response.close();
+					} finally {
+						response.close();
+					}
+				} catch (Exception e) {
+					e.printStackTrace();
+					httpClient.close();
+				} finally {
+					httpClient.close();
+				}
+			} catch (IOException e) {
+				e.printStackTrace();
+			}
+
+			return result;
+
+		}
 }
