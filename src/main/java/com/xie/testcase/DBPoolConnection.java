@@ -3,16 +3,12 @@ package com.xie.testcase;
 import java.io.BufferedInputStream;
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -28,7 +24,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.xmlbeans.impl.xb.xmlconfig.ConfigDocument.Config;
 import org.testng.annotations.Test;
 
 public class DBPoolConnection {
@@ -59,42 +54,6 @@ public class DBPoolConnection {
 	 */
 	public DruidPooledConnection getConnection() throws SQLException {
 		return druidDataSource.getConnection();
-	}
-
-	/**
-	 * @param string
-	 *            配置文件名
-	 * @return Properties对象
-	 */
-	private static Properties loadPropertiesFile(String fullFile) {
-		String webRootPath = null;
-		if (null == fullFile || fullFile.equals("")) {
-			throw new IllegalArgumentException(
-					"Properties file path can not be null" + fullFile);
-		}
-		webRootPath = DBPoolConnection.class.getClassLoader().getResource("")
-				.getPath();
-		webRootPath = new File(webRootPath).getParent();
-		InputStream inputStream = null;
-		Properties p = null;
-		try {
-			inputStream = new FileInputStream(new File(webRootPath
-					+ File.separator + fullFile));
-			p = new Properties();
-			p.load(inputStream);
-		} catch (Exception e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				if (null != inputStream) {
-					inputStream.close();
-				}
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-
-		return p;
 	}
 
 	private static Object getCellValue(Cell cell) {
