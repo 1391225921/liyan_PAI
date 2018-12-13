@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1332" started-at="2018-12-13T07:31:58Z" finished-at="2018-12-13T07:31:59Z">
+  <suite name="Default suite" duration-ms="1335" started-at="2018-12-13T08:13:48Z" finished-at="2018-12-13T08:13:50Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1332" started-at="2018-12-13T07:31:58Z" finished-at="2018-12-13T07:31:59Z">
+    <test name="Default test" duration-ms="1335" started-at="2018-12-13T08:13:48Z" finished-at="2018-12-13T08:13:50Z">
       <class name="com.xie.testcase.DBPoolConnection">
-        <test-method status="PASS" signature="testttt()[pri:0, instance:com.xie.testcase.DBPoolConnection@5c5a1b69]" name="testttt" duration-ms="1317" started-at="2018-12-13T07:31:58Z" finished-at="2018-12-13T07:31:59Z">
+        <test-method status="PASS" signature="testttt()[pri:0, instance:com.xie.testcase.DBPoolConnection@5c5a1b69]" name="testttt" duration-ms="1318" started-at="2018-12-13T08:13:48Z" finished-at="2018-12-13T08:13:50Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- testttt -->
