@@ -45,7 +45,6 @@ public class DBPoolConnection {
 		}
 	}
 	
-
 	/**
 	 * 返回druid数据库连接
 	 * 
