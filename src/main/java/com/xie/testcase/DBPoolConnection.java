@@ -32,7 +32,7 @@ public class DBPoolConnection {
 
 	static {
 				
-		//Properties properties = loadPropertiesFile("resource/db_server.properties");
+		//Properties properties = loadPropertiesFile("resource/db_server.properties" 1);
 		try {
 			InputStream inputStream = new BufferedInputStream(new FileInputStream(new File("resource/db_server.properties")));
 			Properties properties = new Properties();
