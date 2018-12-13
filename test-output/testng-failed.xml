@@ -3,11 +3,11 @@
 <suite guice-stage="DEVELOPMENT" name="Failed suite [Default suite]">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.xie.testcase.TestStart">
+      <class name="com.xie.testcase.DBPoolConnection">
         <methods>
-          <include name="testStart"/>
+          <include name="testttt"/>
         </methods>
-      </class> <!-- com.xie.testcase.TestStart -->
+      </class> <!-- com.xie.testcase.DBPoolConnection -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

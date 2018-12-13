@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="1327" started-at="2018-12-11T09:38:54Z" finished-at="2018-12-11T09:38:55Z">
+  <suite name="Default suite" duration-ms="1332" started-at="2018-12-13T07:31:58Z" finished-at="2018-12-13T07:31:59Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="1327" started-at="2018-12-11T09:38:54Z" finished-at="2018-12-11T09:38:55Z">
-      <class name="com.xie.testcase.TestStart">
-        <test-method status="PASS" signature="testStart()[pri:0, instance:com.xie.testcase.TestStart@224edc67]" name="testStart" duration-ms="1309" started-at="2018-12-11T09:38:54Z" finished-at="2018-12-11T09:38:55Z">
+    <test name="Default test" duration-ms="1332" started-at="2018-12-13T07:31:58Z" finished-at="2018-12-13T07:31:59Z">
+      <class name="com.xie.testcase.DBPoolConnection">
+        <test-method status="PASS" signature="testttt()[pri:0, instance:com.xie.testcase.DBPoolConnection@5c5a1b69]" name="testttt" duration-ms="1317" started-at="2018-12-13T07:31:58Z" finished-at="2018-12-13T07:31:59Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testStart -->
-      </class> <!-- com.xie.testcase.TestStart -->
+        </test-method> <!-- testttt -->
+      </class> <!-- com.xie.testcase.DBPoolConnection -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
