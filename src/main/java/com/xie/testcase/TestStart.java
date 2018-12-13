@@ -43,15 +43,15 @@ public class TestStart {
 				}
 				if (result.contains("token")) {
 					token = JsonPath.read(result, "$.result.token");
-					expJson = expJson.replace("tihuan", token);
+					expJson = expJson.replace("tihuan_token", token);
 				}
 				if (result.contains("id")) {
 					id = JsonPath.read(result, "$.result.id");
-					expJson = expJson.replace("tihuan", id);
+					expJson = expJson.replace("tihuan_id", id);
 				}
 				if (result.contains("userId")) {
 					userId = JsonPath.read(result, "$.result.userId");
-					expJson = expJson.replace("tihuan", userId);
+					expJson = expJson.replace("tihuan_userId", userId);
 				}
 			} else {
 				result = httpUtil.post(list.get(i).getUrl(), token);
