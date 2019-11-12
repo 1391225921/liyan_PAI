@@ -1,6 +1,6 @@
 package com.xie.beans;
 
-public class beans {
+public class Beans {
 private String id;
 
 public String getId() {

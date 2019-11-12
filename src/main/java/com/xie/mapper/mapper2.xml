@@ -3,6 +3,12 @@
 <mapper namespace="mymapper2">
 	<select id="selectarticlid" parameterType="java.lang.String"
 		resultType="com.xie.beans.beans">
-		select ID from EXAMINE_AUDIT where REQUIRE_ID = '40289e0a671b441901671b509d8b0003'
+		select ID from EXAMINE_AUDIT where REQUIRE_ID =
+		'40289e0a671b441901671b509d8b0003'
 	</select>
+	<insert id="insertuserinform" useGeneratedKeys="true"
+		keyProperty="id">
+		insert into XX (username,password,account) values
+		(#{username},#{password},#{account})
+		</insert>
 </mapper>
