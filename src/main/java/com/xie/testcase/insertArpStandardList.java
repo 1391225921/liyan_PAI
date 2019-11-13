@@ -1,5 +1,13 @@
 package com.xie.testcase;
 
+import org.apache.commons.lang3.StringUtils;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.ss.usermodel.Row;
+import org.apache.poi.ss.usermodel.Sheet;
+import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.testng.annotations.Test;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -10,14 +18,6 @@ import java.sql.PreparedStatement;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
-
-import org.apache.commons.lang3.StringUtils;
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.testng.annotations.Test;
 
 public class insertArpStandardList {
 	public static final String url = "jdbc:mysql://113.204.112.125:51020/mysql_mybites";  
@@ -73,24 +73,27 @@ public class insertArpStandardList {
 		Sheet sheet = wb.getSheetAt(0);
 
 		if (sheet != null) {
-			int rowNos = sheet.getLastRowNum();// 得到excel的总记录条数
-			for (int i = 0; i <= rowNos; i++) {// 遍历行
-				List<Object> rowValue = new LinkedList<Object>();
-				List<String> table = new LinkedList<String>();
+			/**
+			 * 获取总行数，为循环列做准备
+			 */
+			int rowNos = sheet.getLastRowNum();
+			for (int i = 0; i <= rowNos; i++) {
+				List<Object> rowValue = new LinkedList<>();
+				//List<String> table = new LinkedList<>();多表插入时使用
 				Row row = sheet.getRow(i);
 				String s = "";
-				
+				/**
+				 * 获取总列数，为循环列做准备
+				 */
 				if (row != null) {
-					int columNos = row.getLastCellNum();// 表头总共的列数
+					int columNos = row.getLastCellNum();
 					for (int j = 0; j < columNos; j++) {
 						Cell cell = row.getCell(j);
 
 						// 获取table名称
 						if (cell.toString().contains("Table")) {
-							// System.out.print(cell.toString());
 							tableName = cell.toString().substring(6);
 							z = cell.getRowIndex() + 1;
-							//System.out.print(aaa);
 							break;
 							
 						} else if (i == z) {
@@ -101,7 +104,6 @@ public class insertArpStandardList {
 					
 				}
 				if (!rowValue.isEmpty() ) {
-					//System.out.print(rowValue);
 					String sql ="INSERT INTO "+tableName+ " Value (" + "'"+StringUtils.join(rowValue.toArray(), "','")+"');";
 					System.out.print(sql);
 					DBHelper(sql);
@@ -109,11 +111,8 @@ public class insertArpStandardList {
 				}			
 				
 			}
-			// System.out.print(dataList);
 		}
-		/*
-		 * for (List<Object> str : dataList) System.out.print(str);
-		 */
+
 	}
 
 }
