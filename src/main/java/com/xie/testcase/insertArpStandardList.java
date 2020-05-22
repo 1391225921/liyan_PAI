@@ -20,10 +20,10 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.testng.annotations.Test;
 
 public class insertArpStandardList {
-	public static final String url = "jdbc:mysql://113.204.112.125:51020/mysql_mybites";  
+	public static final String url = "jdbc:mysql://192.168.30.92:3306/apitest?useUnicode=true&characterEnconding=UTF-8";
 	public static final String name = "com.mysql.cj.jdbc.Driver";  
-	public static final String user = "root";  
-	public static final String password = "Gh3msrootabc5a"; 
+	public static final String user = "liyan";
+	public static final String password = "liyan";
 	public static Connection conn = null;  
 	public static PreparedStatement pst = null;
 	public static void DBHelper(String sql) {  
@@ -32,6 +32,8 @@ public class insertArpStandardList {
 			conn = DriverManager.getConnection(url, user, password);//获取连接  
 			pst = conn.prepareStatement(sql);//准备执行语句  
 			pst.execute();
+			pst.close();
+			conn.close();
 		} catch (Exception e) {  
 			e.printStackTrace();  
 		}  
@@ -61,7 +63,7 @@ public class insertArpStandardList {
 	@Test
 	public void testttt() throws IOException {
 		int z = 0;
-		File file = new File("F:\\t_user.xlsx");
+		File file = new File("C:\\Users\\sgy\\Desktop\\t_user.xlsx");
 		InputStream in = new FileInputStream(file);
 		List<List<Object>> dataList = new ArrayList<>();
 		String tableName = "";
@@ -87,10 +89,10 @@ public class insertArpStandardList {
 
 						// 获取table名称
 						if (cell.toString().contains("Table")) {
-							// System.out.print(cell.toString());
+							System.out.print(cell.toString());
 							tableName = cell.toString().substring(6);
 							z = cell.getRowIndex() + 1;
-							//System.out.print(aaa);
+							System.out.print("-------");
 							break;
 							
 						} else if (i == z) {
@@ -103,7 +105,7 @@ public class insertArpStandardList {
 				if (!rowValue.isEmpty() ) {
 					//System.out.print(rowValue);
 					String sql ="INSERT INTO "+tableName+ " Value (" + "'"+StringUtils.join(rowValue.toArray(), "','")+"');";
-					System.out.print(sql);
+					System.out.println(sql);
 					DBHelper(sql);
 					
 				}			
@@ -111,9 +113,7 @@ public class insertArpStandardList {
 			}
 			// System.out.print(dataList);
 		}
-		/*
-		 * for (List<Object> str : dataList) System.out.print(str);
-		 */
+
 	}
 
 }

@@ -1,10 +1,12 @@
 package com.xie.beans;
 
+import org.apache.http.client.entity.UrlEncodedFormEntity;
+
 public class ParamBeans {
 	private String id;
 	private String url;
 	private String params;
-	private String exp_json;
+	private String exp_Date;
 	private int is_need_token;
 	private int is_use;
 	private String remarks;
@@ -33,12 +35,12 @@ public class ParamBeans {
 		this.id = id;
 	}
 
-	public String getExp_json() {
-		return exp_json;
+	public String getExp_Date() {
+		return exp_Date;
 	}
 
-	public void setExp_json(String exp_json) {
-		this.exp_json = exp_json;
+	public void setExp_Date(String exp_Date) {
+		this.exp_Date = exp_Date;
 	}
 
 	public int getIs_need_token() {

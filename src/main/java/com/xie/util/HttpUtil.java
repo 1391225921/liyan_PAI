@@ -2,6 +2,7 @@ package com.xie.util;
 
 import java.io.IOException;
 
+
 import org.apache.http.Consts;
 import org.apache.http.client.methods.CloseableHttpResponse;
 import org.apache.http.client.methods.HttpPost;
@@ -122,4 +123,5 @@ public class HttpUtil {
 		}
 		return result;
 	}
+
 }
