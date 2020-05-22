@@ -6,7 +6,7 @@ public class ParamBeans {
 	private String id;
 	private String url;
 	private String params;
-	private String exp_Date;
+	private String exp_data;
 	private int is_need_token;
 	private int is_use;
 	private String remarks;
@@ -35,13 +35,16 @@ public class ParamBeans {
 		this.id = id;
 	}
 
-	public String getExp_Date() {
-		return exp_Date;
+
+
+	public String getExp_data() {
+		return exp_data;
 	}
 
-	public void setExp_Date(String exp_Date) {
-		this.exp_Date = exp_Date;
+	public void setExp_data(String exp_data) {
+		this.exp_data = exp_data;
 	}
+
 
 	public int getIs_need_token() {
 		return is_need_token;

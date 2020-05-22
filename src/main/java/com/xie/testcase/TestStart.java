@@ -32,8 +32,7 @@ public class TestStart {
 	
 		for (int i = 0; i < list.size(); i++) {
 			entity = list.get(i).getParams();
-            expDate = list.get(i).getExp_Date();
-
+            expDate = list.get(i).getExp_data();
 			if (entity != null) {
 				returnData = new JsonParser().parse(entity).getAsJsonObject();// 把string类型的参数转成json格式
 
