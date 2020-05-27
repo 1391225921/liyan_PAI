@@ -35,8 +35,6 @@ public class ParamBeans {
 		this.id = id;
 	}
 
-
-
 	public String getExp_data() {
 		return exp_data;
 	}
@@ -44,7 +42,6 @@ public class ParamBeans {
 	public void setExp_data(String exp_data) {
 		this.exp_data = exp_data;
 	}
-
 
 	public int getIs_need_token() {
 		return is_need_token;

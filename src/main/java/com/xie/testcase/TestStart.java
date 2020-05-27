@@ -19,7 +19,7 @@ public class TestStart {
 	@Test
 	public static void testStart() {
 		String token = "";
-		String expDate = "";
+		String expdata = "";
 		String result = "";
 		String entity = "";
 		String id = "";
@@ -32,7 +32,8 @@ public class TestStart {
 	
 		for (int i = 0; i < list.size(); i++) {
 			entity = list.get(i).getParams();
-            expDate = list.get(i).getExp_data();
+			expdata = list.get(i).getExp_data();
+
 			if (entity != null) {
 				returnData = new JsonParser().parse(entity).getAsJsonObject();// 把string类型的参数转成json格式
 
@@ -64,7 +65,10 @@ public class TestStart {
 			}
 			JsonObject a = new JsonParser().parse(result).getAsJsonObject();
 //			JsonObject b = new JsonParser().parse(expJson).getAsJsonObject();
-			Assert.assertTrue(result.contains(expDate));//判断接口返回的结果中是都包含预期值
+//			Assert.assertEquals(a, b);
+			System.out.println("result为"+result);
+			System.out.println("expdata为"+expdata);
+			Assert.assertTrue(result.contains(expdata));
 			System.out.println("接口:" + list.get(i).getRemarks() + "测试成功");
 		}
 	}
